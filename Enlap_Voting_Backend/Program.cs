@@ -56,6 +56,9 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// Enable CORS
+app.UseCors("AllowAllOrigins");
+
 await app.SeedRolesAsync();
 
 
@@ -71,9 +74,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 	});
 }
 
-app.UseCors("AllowAllOrigins");
 
-app.UseCors("AllowAllOrigins");
 
 app.UseHttpsRedirection();
 

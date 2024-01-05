@@ -74,19 +74,20 @@ namespace Enlap_Voting_Backend.Extensions
 			services.AddScoped<IContestantSignupService, ContestantSignupService>();
 
 
-			//Connecting frontend
-
+			// Connecting frontend
 			services.AddCors(options =>
 			{
 				options.AddPolicy("AllowAllOrigins", builder =>
 				{
-					builder.WithOrigins("http://localhost:3000", "https://enlabhub-frontend.vercel.app/")
+					builder
+						.WithOrigins("http://localhost:3000", "https://enlabhub-frontend.vercel.app")
 						.AllowAnyHeader()
 						.AllowAnyMethod()
 						.AllowCredentials();
 				});
 			});
-		}		
+
+		}
 	}
 
 

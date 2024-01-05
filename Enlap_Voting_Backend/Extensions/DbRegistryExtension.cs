@@ -83,18 +83,11 @@ namespace Enlap_Voting_Backend.Extensions
 					builder.WithOrigins("http://localhost:3000", "https://enlabhub-frontend.vercel.app/")
 						.AllowAnyHeader()
 						.AllowAnyMethod()
-						.AllowCredentials()
-						.WithExposedHeaders("Authorization");
+						.AllowCredentials();
 				});
 			});
-		}
-
-
-		
+		}		
 	}
-
-
-	
 
 
 	public static class RoleSeederExtensions
